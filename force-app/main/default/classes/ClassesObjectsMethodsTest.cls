@@ -188,15 +188,16 @@ public with sharing class ClassesObjectsMethodsTest {
     @IsTest
     static void testBookClass() {
         // Initialize a new book instance
-        ClassesObjectsMethods.Book myBook = new ClassesObjectsMethods.Book('1984', 'George Orwell');
+        ClassesObjectsMethods.Book myBook = new ClassesObjectsMethods.Book('1984', 'George Orwell', 336);
 
         // Check that the title and author were set correctly
         Assert.areEqual('1984', myBook.title, 'The title should be correctly set');
         Assert.areEqual('George Orwell', myBook.author, 'The author should be correctly set');
+        Assert.areEqual(336, myBook.pages, 'The pages should be correctly set');
 
         // Call the getBookDetails method and verify the result
         String bookDetails = myBook.getBookDetails();
-        Assert.areEqual('Title: 1984, Author: George Orwell', bookDetails, 'The book details should be correctly formatted');
+        Assert.areEqual('Title: 1984, Author: George Orwell, Pages: 336', bookDetails, 'The book details should be correctly formatted');
     }
     
 
@@ -206,7 +207,7 @@ public with sharing class ClassesObjectsMethodsTest {
         String result = ClassesObjectsMethods.createAndGetBookDetails();
 
         // Define the expected result
-        String expectedResult = 'Title: A Brief History of Time, Author: Stephen Hawking';
+        String expectedResult = 'Title: A Brief History of Time, Author: Stephen Hawking, Pages: 256';
 
         // Use the Assert class to check that the result matches the expected result
         Assert.areEqual(expectedResult, result, 'The method should return the correct book details');
@@ -223,8 +224,8 @@ public with sharing class ClassesObjectsMethodsTest {
 
         // Define the expected result
         List<ClassesObjectsMethods.Book> expectedResult = new List<ClassesObjectsMethods.Book>{
-            new ClassesObjectsMethods.Book('Harry Potter and the Chamber of Secrets', 'J.K. Rowling'),
-            new ClassesObjectsMethods.Book('A Brief History of Time', 'Stephen Hawking')
+            new ClassesObjectsMethods.Book('Harry Potter and the Chamber of Secrets', 'J.K. Rowling', 352),
+            new ClassesObjectsMethods.Book('A Brief History of Time', 'Stephen Hawking', 256)
         };
 
         // Use the Assert class to check that the result matches the expected result

@@ -217,7 +217,7 @@ public with sharing class ClassesObjectsMethodsTest {
     @IsTest
     static void testGenerateBookList() {
         // Create a Book instance
-        ClassesObjectsMethods.Book myTestBook = new ClassesObjectsMethods.Book('Test Title', 'Test Author');
+        ClassesObjectsMethods.Book myTestBook = new ClassesObjectsMethods.Book('Test Title', 'Test Author', 123);
         
         // Call the generateBookList method and capture the return value
         List<ClassesObjectsMethods.Book> result = ClassesObjectsMethods.generateBookList(myTestBook);
